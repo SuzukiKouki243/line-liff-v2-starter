@@ -148,7 +148,8 @@
     const startReader = () => {
         reader.start((value) => {
             // QRコード読み取り時に実行される処理（valueが読み取り値）
-            document.querySelector("#decoded-value").textContent = value;
+            // document.querySelector("#decoded-value").textContent = value;
+            location.href = value;
         }, false);  // false:読み取り後にリーダーを閉じない
     }
 
