@@ -8,13 +8,12 @@
         <script src="https://raw.githubusercontent.com/cozmo/jsQR/master/dist/jsQR.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.2, maximum-scale=4,user-scalable=yes">
-document.body.append(video);
 <!-- jsQR.jsの読み込み -->
 <script src="https://raw.githubusercontent.com/cozmo/jsQR/master/dist/jsQR.js"></script>
 <script>
   var video,tmp,tmp_ctx,qr,prev,prev_ctx,w,h,m,x1,y1;
   window.addEventListener("load",function(){
-    video=document.createElement('video');
+    video=document.getElementById('video');
     video.setAttribute("autoplay",true);
     video.setAttribute("muted",true);
     video.setAttribute("playsinline","");
@@ -75,7 +74,8 @@ document.body.append(video);
     </head>
     <body>
         <p>ピントを合わせて、QRコードをカメラ映像の赤枠内にあわせると読み取ります</p>
-  <div><canvas id="preview"></canvas></div>
+  <video id="video" playsinline autoplay loop muted></video>
+  <div><canvas id="preview" style="display: none"></canvas></div>
   <textarea id="qr" rows="8" cols="40"></textarea>
         <div id="liffAppContent">
             <!-- ACTION BUTTONS -->
