@@ -150,6 +150,7 @@
             // QRコード読み取り時に実行される処理（valueが読み取り値）
            document.querySelector("#decoded-value").textContent = value;
         }, false);  // false:読み取り後にリーダーを閉じない
+        reader.stop(); // 追加行
     }
 
     // QRコードリーダー停止処理
