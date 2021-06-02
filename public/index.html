@@ -16,7 +16,7 @@
     video=document.getElementById('video');
     video.setAttribute("autoplay",true);
     video.setAttribute("muted",true);
-    video.setAttribute("playsinline","");
+    video.setAttribute("playsinline",true);
     video.onloadedmetadata = function(e){video.play();};
     prev=document.getElementById("preview");
     prev_ctx=prev.getContext("2d");
