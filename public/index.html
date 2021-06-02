@@ -153,6 +153,10 @@
             location.href = value;
         }, true);  // false:読み取り後にリーダーを閉じない
         reader.stop();
+        liff.sendMessages([{
+                'type': 'text',
+                'text': "You've successfully sent a message! Hooray!"
+            }]);
     }
 
     // QRコードリーダー停止処理
