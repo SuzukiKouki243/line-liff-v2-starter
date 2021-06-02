@@ -31,6 +31,21 @@
                 </div>
             </div>
             <div id="shareTargetPickerMessage"></div>
+            
+            <label>scaned data</label>
+    <div class="input-group">
+        <span class="input-group-btn">
+            <button class="btn btn-default clip_btn glyphicon glyphicon-paperclip" data-clipboard-target="#qrcode_scaned_data"></button>
+        </span>
+        <input id="qrcode_scaned_data" type="text" class="form-control" v-model="qrcode_scaned_data" readonly>
+    </div><br>
+    <button class="btn btn-primary" v-on:click="qrcode_scan()">{{qrcode_btn}}</button><br>
+    <div>
+        <img v-show="!qrcode_running && qrcode_scaned_data==''" id="qrcode_start" class="img-responsive" src="./img/qrcode_start.png"><br>
+        <video v-show="qrcode_running" id="qrcode_camera" class="img-responsive" autoplay></video>
+        <canvas v-show="!qrcode_running && qrcode_scaned_data!=''" id="qrcode_canvas" class="img-responsive"></canvas>
+    </div>
+            
             <!-- ACCESS TOKEN DATA -->
             <div id="accessTokenData" class="hidden textLeft">
                 <h2>Access Token</h2>
