@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LIFF Starter</title>
+         <title>QRCode Reader</title>
         <link rel="stylesheet" href="style.css">
-        <script src="https://raw.githubusercontent.com/cozmo/jsQR/master/dist/jsQR.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.2, maximum-scale=4,user-scalable=yes">
 <!-- jsQR.jsの読み込み -->
@@ -73,9 +73,32 @@
 
     </head>
     <body>
-        <p>ピントを合わせて、QRコードをカメラ映像の赤枠内にあわせると読み取ります</p>
-  <video id="video" playsinline autoplay loop muted></video>
-  <div><canvas id="preview" style="display: none"></canvas></div>
+        
+         <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>QRコードリーダー</h1>
+                    <div>
+                        <video autoplay playsinline="true" style="width:100%; height: 100%; object-fit: fill;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <span id="decoded-value"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="startReader();">Start</button>
+                    <button type="button" class="btn" onclick="stopReader();">Stop</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jsqr@latest/dist/jsQR.min.js"></script>
+           
   <textarea id="qr" rows="8" cols="40"></textarea>
         <div id="liffAppContent">
             <!-- ACTION BUTTONS -->
