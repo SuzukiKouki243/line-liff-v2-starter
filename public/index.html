@@ -8,14 +8,15 @@
         <script src="https://raw.githubusercontent.com/cozmo/jsQR/master/dist/jsQR.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.2, maximum-scale=4,user-scalable=yes">
+document.body.append(video);
 <!-- jsQR.jsの読み込み -->
 <script src="https://raw.githubusercontent.com/cozmo/jsQR/master/dist/jsQR.js"></script>
 <script>
   var video,tmp,tmp_ctx,qr,prev,prev_ctx,w,h,m,x1,y1;
   window.addEventListener("load",function(){
     video=document.createElement('video');
-    video.setAttribute("autoplay","");
-    video.setAttribute("muted","");
+    video.setAttribute("autoplay",true);
+    video.setAttribute("muted",true);
     video.setAttribute("playsinline","");
     video.onloadedmetadata = function(e){video.play();};
     prev=document.getElementById("preview");
