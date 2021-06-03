@@ -29,6 +29,7 @@
                     <h2>一度スキャンしたらブラウザを開きなおして下さい。<br>（連続スキャンには対応していません。随時対応予定です。）</h2>
                     <button type="button" class="btn btn-primary" onclick="startReader();" style="width:80px;height:40px">スキャン</button>
                     <button type="button" class="btn btn-primary" onclick="scanURLData();" style="width:80px;height:40px">データ取得</button>
+                    <button type="button" class="btn btn-primary" onclick="sendURLData();" style="width:80px;height:40px">データ送信</button>
                     <!-- <button type="button" class="btn" onclick="stopReader();">Stop</button> -->
                 </div>
             </div>
@@ -172,7 +173,7 @@
                 'text': "You've successfully sent a message! Hooray!"
             }]);
     }
-
+    
     // QRコードリーダー停止処理
     const stopReader = () => {
         reader.stop();
