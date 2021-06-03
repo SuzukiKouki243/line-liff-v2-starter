@@ -128,7 +128,7 @@ function registerButtonHandlers() {
         } else {
             liff.sendMessages([{
                 'type': 'text',
-                'text': "You've successfully sent a message! Hooray!"
+                'text': document.getElementById('decoded-value').value
             }]).then(function() {
                 window.alert('Message sent');
             }).catch(function(error) {
