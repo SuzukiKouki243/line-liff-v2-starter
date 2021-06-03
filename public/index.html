@@ -28,6 +28,7 @@
                 <div class="col">
                     <h2>一度スキャンしたらブラウザを開きなおして下さい。<br>（連続スキャンには対応していません。随時対応予定です。）</h2>
                     <button type="button" class="btn btn-primary" onclick="startReader();" style="width:80px;height:40px">スキャン</button>
+                    <button type="button" class="btn btn-primary" onclick="scanURLData();" style="width:80px;height:40px">データ取得</button>
                     <!-- <button type="button" class="btn" onclick="stopReader();">Stop</button> -->
                 </div>
             </div>
@@ -150,6 +151,20 @@
             // QRコード読み取り時に実行される処理（valueが読み取り値）
             // document.querySelector("#decoded-value").textContent = value;
             location.href = value;
+        }, true);  // false:読み取り後にリーダーを閉じない
+        reader.stop();
+        liff.sendMessages([{
+                'type': 'text',
+                'text': "You've successfully sent a message! Hooray!"
+            }]);
+    }
+    
+     // scanデータ取得処理
+    const scanURLData = () => {
+        reader.start((value) => {
+            // QRコード読み取り時に実行される処理（valueが読み取り値）
+            document.querySelector("#decoded-value").textContent = value;
+            // location.href = value;
         }, true);  // false:読み取り後にリーダーを閉じない
         reader.stop();
         liff.sendMessages([{
